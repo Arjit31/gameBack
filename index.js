@@ -1,9 +1,9 @@
 // const express = require("express");
 // const http = require('http');
 // const socketIo = require('socket.io');
-// const keyRoute = require('./routes/key');
-// const gameRoute = require('./routes/game');
-// const connectionRoute = require('./routes/connection');
+const keyRoute = require('./routes/key');
+const gameRoute = require('./routes/game');
+const connectionRoute = require('./routes/connection');
 // const cors = require("cors");
 
 // const app = express();
