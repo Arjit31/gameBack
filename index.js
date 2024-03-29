@@ -1,14 +1,27 @@
+// const express = require("express");
+// const http = require('http');
+// const socketIo = require('socket.io');
+// const keyRoute = require('./routes/key');
+// const gameRoute = require('./routes/game');
+// const connectionRoute = require('./routes/connection');
+// const cors = require("cors");
+
+// const app = express();
+// const server = http.createServer(app);
+// const io = socketIo(server);
+
+const { createServer } = require("http");
+const { Server } = require("socket.io");
 const express = require("express");
-const http = require('http');
-const socketIo = require('socket.io');
-const keyRoute = require('./routes/key');
-const gameRoute = require('./routes/game');
-const connectionRoute = require('./routes/connection');
 const cors = require("cors");
 
 const app = express();
-const server = http.createServer(app);
-const io = socketIo(server);
+const server = createServer(app);
+const io = new Server(server, {
+  cors: {
+    origin: "https://gamefront.onrender.com"
+  }
+});
 
 const port = process.env.PORT || 5000;
 let users = {};
